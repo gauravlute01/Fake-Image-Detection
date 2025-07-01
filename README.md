@@ -53,7 +53,8 @@ model = Sequential([
     Dense(128, activation='relu'),
     Dropout(0.3),
     Dense(1, activation='sigmoid')])
-```python
+
+---
 
 ## 📈 Training
 - Binary Crossentropy Loss
