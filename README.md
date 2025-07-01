@@ -26,7 +26,7 @@ The goal is to build a robust image classification model that can distinguish be
 ## 📊 Dataset
 
 The dataset is organized into two folders:
-- Images are resized to 128x128 for faster training.
+- Images are resized to 32x32 for faster training.
 - Data is split into training, validation, and test sets.
 
 ## 🧠 Model Architecture
@@ -41,7 +41,7 @@ The CNN model includes:
 
 ```python
 model = Sequential([
-    Conv2D(32, (3, 3), activation='relu', input_shape=(128, 128, 3)),
+    Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3)),
     MaxPooling2D(2, 2),
     Dropout(0.2),
 
@@ -55,23 +55,22 @@ model = Sequential([
     Dense(1, activation='sigmoid')
 ])
 
+## 📈 Training
+- Binary Crossentropy Loss
+- Adam Optimizer
+- Accuracy as the evaluation metric
+- Early stopping and model checkpointing used to prevent overfitting
 
+## ✅ Evaluation
+- Accuracy and loss curves plotted
+- Confusion matrix and classification report used for performance metrics
 
+## 🔍 Results
+- The model performs well in distinguishing real and fake images.
+- Accuracy: [insert final accuracy here]
+- Precision, Recall, and F1-score are calculated.
 
-
-
-
-
-
-
-
-
-
-
-
-
-# Fake-Image-Detection
-- Collected and prepared a diverse dataset of real and fake images.
-- Resized the images for optimal input to the model.
-- Trained a Convolutional Neural Network (CNN) using an appropriate loss function and optimizer.
-- Evaluated the model’s performance by calculating the accuracy score.
+## 🚀 Future Work
+- Use larger and more diverse datasets.
+- Implement Transfer Learning with pretrained CNN models (like VGG16, ResNet50).
+- Develop a web interface to upload and classify images in real-time.
